@@ -1,0 +1,544 @@
+.freelancer-profile-container {
+    background-color: #F9FAFC;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    @media (max-width: 768px) {
+      padding: 20px 15px;
+    }
+    
+    &.dark-mode {
+      background-color: #1d1d1f;
+      color: #f5f5f7;
+    }
+    
+    /* Dark Mode Styles */
+    &.dark-mode {
+      .loading-container, .error-container {
+        color: #a1a1a6;
+      }
+      
+      .error-container {
+        color: #ff453a;
+      }
+      
+      .profile-section {
+        background-color: #2c2c2e;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .profile-info .profile-avatar {
+        border-color: #2c2c2e;
+      }
+      
+      .profile-details h1 {
+        color: #f5f5f7;
+      }
+      
+      .profile-details .user-type {
+        background-color: rgba(74, 111, 165, 0.2);
+      }
+      
+      .profile-details .location,
+      .profile-details .member-since {
+        color: #a1a1a6;
+      }
+      
+      .profile-details .review-count {
+        color: #a1a1a6;
+      }
+      
+      .profile-details .rating-value {
+        color: #f5f5f7;
+      }
+      
+      .profile-body h2 {
+        color: #f5f5f7;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .about-section p {
+        color: #a1a1a6;
+      }
+      
+      .skills-section .skill-tag {
+        background-color: rgba(74, 111, 165, 0.2);
+      }
+      
+      .certifications-section .certification-link {
+        background-color: rgba(74, 111, 165, 0.2);
+      }
+      
+      .gigs-section h2,
+      .completed-jobs-section h2 {
+        color: #f5f5f7;
+      }
+      
+      .loading-gigs, .error-gigs, .no-gigs,
+      .gig-card, .completed-job-card,
+      .loading-jobs, .error-jobs {
+        background-color: #2c2c2e;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .gig-content h3,
+      .job-title {
+        color: #f5f5f7;
+      }
+      
+      .gig-price .label,
+      .job-completion-date {
+        color: #a1a1a6;
+      }
+      
+      .job-description {
+        color: #a1a1a6;
+      }
+      
+      .job-reviews h4 {
+        color: #f5f5f7;
+      }
+      
+      .job-details {
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .job-reviews {
+        border-top-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .back-btn {
+        background-color: #3a3a3c;
+        color: #f5f5f7;
+        
+        &:hover {
+          background-color: #4e4e52;
+        }
+      }
+    }
+  }
+  
+  .loading-container, .error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .error-container {
+    color: #F44336;
+  }
+  
+  .freelancer-profile {
+    width: 100%;
+    max-width: 1000px;
+    
+    .profile-section {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      
+      .profile-header {
+        position: relative;
+        
+        .profile-cover {
+          height: 150px;
+          background: linear-gradient(135deg, #4A6FA5 0%, #3A5985 100%);
+        }
+      }
+    }
+    
+    .gigs-section {
+      margin-bottom: 30px;
+      
+      h2 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .loading-gigs, .error-gigs, .no-gigs {
+        text-align: center;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        color: #666;
+        transition: all 0.3s ease;
+      }
+      
+      .error-gigs {
+        color: #F44336;
+      }
+      
+      .gigs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        
+        @media (max-width: 576px) {
+          grid-template-columns: 1fr;
+        }
+        
+        .gig-card {
+          background-color: white;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          }
+          
+          .gig-img {
+            height: 180px;
+            overflow: hidden;
+            
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+            }
+          }
+          
+          .gig-content {
+            padding: 15px;
+            
+            h3 {
+              margin: 0 0 10px;
+              font-size: 16px;
+              color: #333;
+              line-height: 1.4;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            
+            .gig-price {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              
+              .label {
+                font-size: 12px;
+                color: #777;
+              }
+              
+              .price {
+                font-size: 18px;
+                font-weight: 600;
+                color: #4A6FA5;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .completed-jobs-section {
+      margin-bottom: 30px;
+      
+      h2 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .loading-jobs, .error-jobs {
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .error-jobs {
+        color: #F44336;
+      }
+      
+      .completed-jobs-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        .completed-job-card {
+          background-color: white;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+          transition: all 0.3s ease;
+          
+          .job-title {
+            font-size: 18px;
+            margin: 0 0 12px;
+            color: #333;
+          }
+          
+          .job-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+            .job-category {
+              background-color: rgba(74, 111, 165, 0.1);
+              color: #4A6FA5;
+              padding: 4px 10px;
+              border-radius: 20px;
+              font-size: 13px;
+            }
+            
+            .job-completion-date {
+              color: #777;
+              font-size: 13px;
+            }
+          }
+          
+          .job-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          
+          .job-reviews {
+            border-top: 1px solid #E0E6EF;
+            padding-top: 15px;
+            
+            h4 {
+              font-size: 16px;
+              margin: 0 0 15px;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+    
+    .contact-section {
+      display: flex;
+      justify-content: space-between;
+      
+      @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .back-btn, .contact-btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        
+        i {
+          font-size: 16px;
+        }
+      }
+      
+      .back-btn {
+        background-color: #f1f1f1;
+        color: #555;
+        
+        &:hover {
+          background-color: #e0e0e0;
+        }
+      }
+      
+      .contact-btn {
+        background-color: #4A6FA5;
+        color: white;
+        
+        &:hover {
+          background-color: #3A5985;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(74, 111, 165, 0.2);
+        }
+      }
+    }
+        
+    .profile-info {
+      display: flex;
+      padding: 20px;
+      position: relative;
+      margin-top: -50px;
+      
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .profile-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+        
+        @media (max-width: 576px) {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .profile-details {
+        h1 {
+          font-size: 24px;
+          margin: 0 0 5px;
+          color: #333;
+        }
+        
+        .user-type {
+          display: inline-block;
+          background-color: rgba(74, 111, 165, 0.1);
+          color: #4A6FA5;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        
+        .location, .member-since {
+          color: #777;
+          font-size: 14px;
+          margin-bottom: 5px;
+          
+          i {
+            margin-right: 5px;
+          }
+        }
+        
+        .user-rating {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin-top: 8px;
+          
+          .star-icon {
+            color: #ffb800;
+            font-size: 18px;
+          }
+          
+          .rating-value {
+            font-weight: 600;
+            color: #333;
+          }
+          
+          .review-count {
+            color: #777;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  
+  .profile-body {
+    padding: 20px;
+    
+    h2 {
+      font-size: 20px;
+      color: #333;
+      margin: 0 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #E0E6EF;
+    }
+    
+    .about-section {
+      margin-bottom: 30px;
+      
+      p {
+        color: #555;
+        line-height: 1.6;
+      }
+    }
+    
+    .skills-section {
+      margin-bottom: 30px;
+      
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        
+        .skill-tag {
+          background-color: rgba(74, 111, 165, 0.1);
+          color: #4A6FA5;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba(74, 111, 165, 0.2);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+    
+    .certifications-section {
+      margin-bottom: 30px;
+      
+      .certifications-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        
+        .certification-link {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          background-color: rgba(74, 111, 165, 0.1);
+          color: #4A6FA5;
+          padding: 8px 16px;
+          border-radius: 6px;
+          font-size: 14px;
+          transition: all 0.3s ease;
+          
+          i {
+            font-size: 16px;
+          }
+          
+          &:hover {
+            background-color: rgba(74, 111, 165, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(74, 111, 165, 0.1);
+          }
+        }
+      }
+    }
+  }
+  

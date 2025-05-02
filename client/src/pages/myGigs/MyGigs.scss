@@ -1,0 +1,420 @@
+.my-gigs-container {
+  min-height: calc(100vh - 60px);
+  background-color: #f8f8fa;
+  padding: 60px 0;
+  
+  .my-gigs-wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin: 0;
+    }
+    
+    .add-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0071e3;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0077ed;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+      }
+      
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  
+  /* Loading State */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(0, 113, 227, 0.1);
+      border-top: 3px solid #0071e3;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #6e6e73;
+      font-size: 16px;
+    }
+  }
+  
+  /* Error State */
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+    
+    svg {
+      width: 48px;
+      height: 48px;
+      color: #ff3b30;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #1d1d1f;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .retry-button {
+      background-color: #0071e3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0077ed;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+      }
+    }
+  }
+  
+  /* Empty State */
+  .empty-gigs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 0;
+    
+    svg {
+      width: 64px;
+      height: 64px;
+      color: #8e8e93;
+      margin-bottom: 24px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin: 0 0 12px 0;
+    }
+    
+    p {
+      color: #6e6e73;
+      font-size: 16px;
+      margin: 0 0 24px 0;
+      max-width: 400px;
+    }
+    
+    .create-gig-btn {
+      background-color: #0071e3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: #0077ed;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+      }
+    }
+  }
+  
+  /* Gigs Table */
+  .gigs-table-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  .gigs-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+    th, td {
+      padding: 16px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f5f5f7;
+      font-weight: 600;
+      font-size: 14px;
+      color: #1d1d1f;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:hover {
+        background-color: rgba(0, 113, 227, 0.02);
+      }
+    }
+    
+    /* Column specific styles */
+    .image-column {
+      width: 120px;
+      
+      .gig-image-container {
+        width: 80px;
+        height: 50px;
+        border-radius: 6px;
+        overflow: hidden;
+        
+        .gig-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    
+    .title-column {
+      .gig-title-link {
+        color: #1d1d1f;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #0071e3;
+        }
+      }
+    }
+    
+    .price-column {
+      width: 100px;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    
+    .sales-column {
+      width: 100px;
+    }
+    
+    .actions-column {
+      width: 120px;
+      
+      .action-buttons {
+        display: flex;
+        gap: 12px;
+        
+        .view-button, .delete-button {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          cursor: pointer;
+          border: none;
+          transition: all 0.2s ease;
+        }
+        
+        .view-button {
+          background-color: rgba(0, 113, 227, 0.1);
+          color: #0071e3;
+          text-decoration: none;
+          
+          &:hover {
+            background-color: rgba(0, 113, 227, 0.2);
+            transform: translateY(-2px);
+          }
+        }
+        
+        .delete-button {
+          background-color: rgba(255, 59, 48, 0.1);
+          color: #ff3b30;
+          
+          &:hover {
+            background-color: rgba(255, 59, 48, 0.2);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+  
+  /* Delete Confirmation Modal */
+  .delete-confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .delete-confirmation-modal {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    padding: 24px;
+    width: 90%;
+    max-width: 400px;
+    
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1d1d1f;
+      margin: 0 0 16px 0;
+    }
+    
+    p {
+      font-size: 15px;
+      color: #6e6e73;
+      margin: 0 0 24px 0;
+    }
+    
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      
+      button {
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      
+      .cancel-button {
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #1d1d1f;
+        
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+      }
+      
+      .confirm-button {
+        background-color: #ff3b30;
+        color: white;
+        border: none;
+        
+        &:hover {
+          background-color: #ff453a;
+          transform: translateY(-2px);
+        }
+        
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+          transform: none;
+        }
+      }
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    padding: 40px 0;
+    
+    .header h1 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gigs-table {
+      th, td {
+        padding: 12px;
+      }
+      
+      th {
+        font-size: 13px;
+      }
+      
+      .image-column {
+        width: 80px;
+        
+        .gig-image-container {
+          width: 60px;
+          height: 40px;
+        }
+      }
+      
+      .price-column, .sales-column {
+        width: 80px;
+      }
+      
+      .actions-column {
+        width: 100px;
+      }
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    
+    .gigs-table-container {
+      overflow-x: auto;
+    }
+    
+    .gigs-table {
+      min-width: 600px;
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

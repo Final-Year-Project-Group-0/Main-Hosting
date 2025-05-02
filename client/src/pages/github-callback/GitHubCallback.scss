@@ -1,0 +1,138 @@
+// src/pages/github-callback/GitHubCallback.scss
+
+// Global style to hide navbar and footer in the callback page
+.github-callback-page {
+  .app, #root > div {
+    .navbar, 
+    nav,
+    .footer,
+    footer {
+      display: none !important;
+    }
+  }
+  
+  // Reset padding that might be added by the app layout
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f6f8fa;
+}
+
+.github-callback-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Full viewport height
+  padding: 40px 20px;
+  background-color: #f6f8fa;
+  
+  .github-callback-content {
+    max-width: 500px;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    
+    .github-logo {
+      margin-bottom: 24px;
+      
+      svg {
+        color: #24292e;
+      }
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #24292e;
+    }
+    
+    p {
+      font-size: 16px;
+      color: #57606a;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(36, 41, 46, 0.1);
+      border-top: 3px solid #24292e;
+      border-radius: 50%;
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+    
+    .success-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #2ea44f;
+      border-radius: 50%;
+      color: white;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    
+    .error-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #f85149;
+      border-radius: 50%;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    
+    .closing-message {
+      font-size: 14px;
+      color: #8b949e;
+      margin-top: 16px;
+      font-style: italic;
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .github-callback-container {
+    background-color: #0d1117;
+    
+    .github-callback-content {
+      background-color: #161b22;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      
+      .github-logo svg {
+        color: #f0f6fc;
+      }
+      
+      h2 {
+        color: #f0f6fc;
+      }
+      
+      p {
+        color: #8b949e;
+      }
+      
+      .spinner {
+        border-color: rgba(240, 246, 252, 0.1);
+        border-top-color: #f0f6fc;
+      }
+    }
+  }
+}
