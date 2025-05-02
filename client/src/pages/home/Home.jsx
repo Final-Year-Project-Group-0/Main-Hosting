@@ -8,7 +8,7 @@ import HowItWorks from "../../components/howitworks/HowItWorks";
 import ProjectCard from "../../components/projectCard/ProjectCard";
 import { projects } from "../../data";
 import FreelancingCTA from "../../components/cta/cta";
-import WhyFreelancify from "../../components/whyFreelancify/whyfreelancify";
+import WhyFreelancify from "../../components/WhyFreelancify/whyfreelancify";
 import RandomGigs from "../../components/randomGigs/RandomGigs";
 
 const Home = () => {
