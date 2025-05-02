@@ -1,0 +1,59 @@
+.slide {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+
+  .container {
+    width: 1400px;
+    position: relative;
+  }
+
+  // Ensure slides have spacing
+  .slick-list {
+    padding: 70px 0 0 0px; // Adds space inside the carousel container
+  }
+
+  .slick-track {
+    display: flex;
+    gap: 20px; // Ensures slides are not stuck together
+  }
+
+  .slick-slide {
+    padding: 0 10px; // Adds spacing between slides
+  }
+
+  // Fix arrow positioning
+  .slick-prev,
+  .slick-next {
+    width: 50px;
+    height: 50px;
+    background-color: #aaa; // Slightly transparent
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .slick-prev {
+    left: -60px; // Adjusted for visibility
+  }
+
+  .slick-next {
+    right: -60px;
+  }
+
+  .slick-prev:hover,
+  .slick-next:hover {
+    background-color: rgba(200, 200, 200, 0.9);
+    transform: translateY(-50%) scale(1.1); // Slight hover effect
+  }
+}
+
+
+

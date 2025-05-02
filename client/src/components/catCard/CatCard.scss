@@ -1,0 +1,72 @@
+.catCard {
+  width: 252px;
+  height: 344px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.07);
+  }
+
+  /* Text background overlay */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 40%
+    );
+    z-index: 1;
+  }
+
+  .desc {
+    font-weight: 350;
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font-size: 14px;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 24px;
+    position: absolute;
+    left: 25px;
+    top: 40px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .desc {
+    opacity: 1;
+  }
+
+  &:hover .title {
+    transform: translateY(3px);
+  }
+}

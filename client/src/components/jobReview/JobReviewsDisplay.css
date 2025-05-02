@@ -1,0 +1,212 @@
+.job-reviews-container {
+    margin: 40px 0;
+  }
+  
+  .job-reviews-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  
+  .reviews-section {
+    margin-bottom: 30px;
+  }
+  
+  .reviews-section h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border-left: 3px solid #0071e3;
+  }
+  
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .job-review-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .job-review-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .reviewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .reviewer-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .reviewer-name {
+    font-weight: 600;
+    color: #1d1d1f;
+    font-size: 15px;
+  }
+  
+  .reviewer-type {
+    font-size: 13px;
+    color: #6e6e73;
+  }
+  
+  .review-rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .star-filled {
+    color: #ffb33e;
+    font-size: 18px;
+  }
+  
+  .star-empty {
+    color: #d1d1d6;
+    font-size: 18px;
+  }
+  
+  .review-content {
+    line-height: 1.5;
+  }
+  
+  .review-text {
+    color: #1d1d1f;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .review-date {
+    color: #6e6e73;
+    font-size: 13px;
+    font-style: italic;
+  }
+  
+  .reviews-loading,
+  .reviews-error,
+  .no-reviews {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .reviews-loading {
+    background-color: rgba(0, 122, 255, 0.1);
+    color: #007aff;
+  }
+  
+  .reviews-error {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: #ff3b30;
+  }
+  
+  .no-reviews {
+    background-color: rgba(142, 142, 147, 0.1);
+    color: #8e8e93;
+    padding: 30px;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .job-reviews-container h2 {
+    color: #f5f5f7;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-mode .reviews-section h3 {
+    color: #f5f5f7;
+    border-left-color: #0a84ff;
+  }
+  
+  body.dark-mode .job-review-item {
+    background-color: #2c2c2e;
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  body.dark-mode .job-review-item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  }
+  
+  body.dark-mode .reviewer-name {
+    color: #f5f5f7;
+  }
+  
+  body.dark-mode .reviewer-type {
+    color: #98989d;
+  }
+  
+  body.dark-mode .reviewer-avatar {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  body.dark-mode .star-empty {
+    color: #636366;
+  }
+  
+  body.dark-mode .review-text {
+    color: #f5f5f7;
+  }
+  
+  body.dark-mode .review-date {
+    color: #98989d;
+  }
+  
+  body.dark-mode .reviews-loading {
+    background-color: rgba(10, 132, 255, 0.15);
+    color: #0a84ff;
+  }
+  
+  body.dark-mode .reviews-error {
+    background-color: rgba(255, 69, 58, 0.15);
+    color: #ff453a;
+  }
+  
+  body.dark-mode .no-reviews {
+    background-color: rgba(142, 142, 147, 0.15);
+    color: #98989d;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .review-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .reviewer-info {
+      margin-bottom: 10px;
+    }
+  }

@@ -1,0 +1,231 @@
+.how-it-works {
+  padding: 80px 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.section-title {
+  color: #2196f3;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title:before {
+  content: "—";
+  display: inline-block;
+  margin-right: 10px;
+  color: #2196f3;
+}
+
+.section-subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* Keep items in one line */
+  gap: 20px; /* Reduced gap between elements */
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.step-card {
+  width: 260px;
+  min-width: 260px;
+  height: 260px;
+  background: #fff;
+  border-radius: 14px; /* Slightly rounder corners */
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07); /* Enhanced shadow */
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.03); /* Subtle border */
+}
+
+.step-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(33, 150, 243, 0.15);
+  border-color: rgba(33, 150, 243, 0.1);
+}
+
+.step-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(
+    135deg,
+    #2196f3,
+    #0d6efd
+  ); /* Gradient background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  color: white;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3); /* Icon shadow */
+}
+
+/* .step-card:hover .step-icon {
+  transform: scale(1.05);
+} */
+
+.step-connection {
+  display: flex;
+  align-items: center;
+  width: 50px; /* Increased width for the dotted line */
+  justify-content: center;
+  position: relative;
+}
+
+/* Create the dotted line */
+.step-connection:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  border-top: 3px dotted #2196f3; /* Dotted line style */
+  position: absolute;
+}
+
+.step-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+  width: 100%;
+  text-align: center;
+}
+
+.step-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+/* Dark mode support */
+body.dark-mode .how-it-works {
+  background-color: #1d1d1f;
+}
+
+body.dark-mode .section-subtitle {
+  color: #f5f5f7;
+}
+
+body.dark-mode .step-card {
+  background-color: #2c2c2e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .step-title {
+  color: #f5f5f7;
+}
+
+body.dark-mode .step-description {
+  color: #a1a1a6;
+}
+
+body.dark-mode .step-connection:after {
+  border-top-color: #64b5f6;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .steps-container {
+    flex-wrap: wrap;
+    gap: 30px 20px;
+    justify-content: center;
+  }
+
+  .step-connection {
+    display: none; /* Hide connectors when wrapping */
+  }
+
+  .step-card {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .steps-container {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .step-card {
+    width: 220px;
+    min-width: 220px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-subtitle {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .steps-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px 15px;
+  }
+
+  .step-card {
+    width: 200px;
+    min-width: 200px;
+    height: 240px;
+    padding: 20px 15px;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-card {
+    width: 300px;
+    min-width: 300px;
+    height: auto;
+    min-height: 200px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+  }
+
+  .step-description {
+    max-width: 260px;
+  }
+}

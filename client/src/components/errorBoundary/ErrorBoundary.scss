@@ -1,0 +1,111 @@
+.error-boundary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 30px;
+    background-color: #F9FAFC;
+    
+    .error-content {
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      
+      h1 {
+        color: #4A6FA5;
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+      
+      p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+      
+      .error-details {
+        margin: 20px 0;
+        background-color: #F9FAFC;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: left;
+        
+        .error-message {
+          color: #E66767; /* Updated from red */
+          font-weight: 500;
+        }
+        
+        details {
+          margin-top: 15px;
+          
+          summary {
+            cursor: pointer;
+            color: #4A6FA5;
+            font-weight: 500;
+            padding: 5px 0;
+          }
+          
+          pre {
+            margin-top: 10px;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #333;
+          }
+        }
+      }
+      
+      .error-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        
+        button, .home-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-block;
+        }
+        
+        button {
+          background-color: #4A6FA5;
+          color: white;
+          border: none;
+          
+          &:hover {
+            background-color: #3A5985;
+          }
+        }
+        
+        .home-link {
+          background-color: #f1f1f1;
+          color: #555;
+          
+          &:hover {
+            background-color: #e0e0e0;
+          }
+        }
+      }
+    }
+  }
+  
+  .error-fallback {
+    padding: 30px;
+    text-align: center;
+    background-color: #FBEEED; /* Updated from red-ish */
+    color: #E66767; /* Updated from red */
+    border-radius: 8px;
+    margin: 20px;
+    font-weight: 500;
+  }

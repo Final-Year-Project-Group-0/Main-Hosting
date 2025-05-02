@@ -1,0 +1,279 @@
+/* WhyFreelancify.css */
+.why-section {
+    padding: 80px 0;
+    background-color: #f8f8fa;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .why-section .container {
+    width: 1300px;
+    max-width: 100%;
+    padding: 0 48px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .why-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+    text-align: center;
+    letter-spacing: -0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .why-section .section-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: #515154;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+  
+  .why-section .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .why-section .feature-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .why-section .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .why-section .icon-container {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #0071e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: white;
+  }
+  
+  .why-section .feature-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .why-section .feature-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #515154;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .why-section .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  
+  .why-section .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0071e3;
+    color: white;
+    border: none;
+    border-radius: 980px;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+  
+  .why-section .primary-btn:hover {
+    background-color: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+  }
+  
+  .why-section .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #0071e3;
+    border: 1px solid #0071e3;
+    border-radius: 980px;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+  }
+  
+  .why-section .secondary-btn:hover {
+    background-color: rgba(0, 113, 227, 0.04);
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1400px) {
+    .why-section .container {
+      width: 1140px;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .why-section .container {
+      width: 960px;
+      padding: 0 30px;
+    }
+    
+    .why-section h2 {
+      font-size: 32px;
+    }
+    
+    .why-section .section-description {
+      font-size: 17px;
+      margin-bottom: 50px;
+    }
+    
+    .why-section .features-grid {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .why-section {
+      padding: 70px 0;
+    }
+    
+    .why-section .container {
+      width: 720px;
+      padding: 0 24px;
+    }
+    
+    .why-section .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    .why-section h2 {
+      font-size: 30px;
+    }
+    
+    .why-section .section-description {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .why-section {
+      padding: 60px 0;
+    }
+    
+    .why-section .container {
+      width: 100%;
+      padding: 0 20px;
+    }
+    
+    .why-section .features-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    
+    .why-section h2 {
+      font-size: 28px;
+    }
+    
+    .why-section .cta-buttons {
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .why-section .primary-btn,
+    .why-section .secondary-btn {
+      width: 100%;
+      padding: 12px 24px;
+    }
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode .why-section {
+    background-color: #1d1d1f;
+  }
+  
+  body.dark-mode .why-section h2 {
+    color: #f5f5f7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  body.dark-mode .why-section .section-description {
+    color: #a1a1a6;
+  }
+  
+  body.dark-mode .why-section .feature-card {
+    background-color: #2c2c2e;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  body.dark-mode .why-section .feature-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  body.dark-mode .why-section .icon-container {
+    background-color: #0a84ff;
+  }
+  
+  body.dark-mode .why-section .feature-card h3 {
+    color: #f5f5f7;
+  }
+  
+  body.dark-mode .why-section .feature-card p {
+    color: #a1a1a6;
+  }
+  
+  body.dark-mode .why-section .primary-btn {
+    background-color: #0a84ff;
+  }
+  
+  body.dark-mode .why-section .primary-btn:hover {
+    background-color: #0091ff;
+    box-shadow: 0 4px 12px rgba(10, 132, 255, 0.3);
+  }
+  
+  body.dark-mode .why-section .secondary-btn {
+    background-color: transparent;
+    color: #0a84ff;
+    border-color: #0a84ff;
+  }
+  
+  body.dark-mode .why-section .secondary-btn:hover {
+    background-color: rgba(10, 132, 255, 0.1);
+  }
